@@ -20,7 +20,7 @@ class MetaMask extends Nullstack {
 
   async connect() {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      this.accounts = await window.ethereum.request({ method: 'eth_requestAccounts' })
+      await window.ethereum.request({ method: 'eth_requestAccounts' })
     } else {
       this._onboarding.startOnboarding();
     }
